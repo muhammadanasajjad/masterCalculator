@@ -1,3 +1,1 @@
 # Master Calculator
-
-Text test
