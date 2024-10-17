@@ -1,0 +1,95 @@
+.calculator-container {
+    display: block;
+    position: relative;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.recent-functions-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.button {
+    background-color: var(--grey-bg-dark-mode);
+    box-shadow: 0px 0px 5px 5px #00000055;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.recent-function {
+    width: 22%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px;
+    color: var(--main-dark-mode);
+    font-weight: 500;
+    font-size: 1.35rem;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-height: 60vh;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.calculator .button {
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    font-size: 2.5rem;
+    padding: 0.75rem;
+}
+
+.calculator .button.zero {
+    grid-column: span 2;
+    aspect-ratio: auto;
+}
+
+.calculator .button.equals {
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+.calculator .button.function {
+    background-color: var(--main-dark-mode);
+    color: var(--main-fg-dark-mode);
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.calculator .button {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 380px) {
+    .calculator .button {
+        font-size: 1.5rem;
+    }
+
+    .calculator .button.function {
+        background-color: var(--main-dark-mode);
+        color: var(--main-fg-dark-mode);
+        font-weight: 500;
+        font-size: 2.5rem;
+    }
+}
+
+.calculator .button.dark {
+    background-color: var(--grey-bg-dark-mode);
+    color: var(--main-dark-mode);
+}
+
+.calculator .button.del {
+    color: var(--grey-fg-dark-mode);
+}
