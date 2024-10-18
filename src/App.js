@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import "./App.css";
 import Calculator from "./components/Calculator";
 import CalculatorFunctions from "./components/CalculatorFunctions";
+import GraphicFunctions from "./components/GraphicFunctions";
+import MenuFunction from "./components/Menu";
 
 function App() {
     const [position, setPosition] = useState({ x: 0, y: 0 }); // State to track cursor position
@@ -20,7 +22,9 @@ function App() {
 
     return (
         <div className="App" onMouseMove={handleMouseMove}>
-            <div class="top-nav-container"></div>
+            <div class="top-nav-container">
+                <MenuFunction />
+            </div>
             <div className="large-bottom-container">
                 <div className="calculator-display">
                     <div className="operation">5 + 0.235</div>
@@ -29,6 +33,10 @@ function App() {
                 <div class="blur-container" ref={containerRef}>
                     {window.innerWidth > 822 && ( // to hide when screen is too small
                         <>
+                            <div className="element large-container">
+                                <GraphicFunctions />
+                            </div>
+                            <div className="element-separator first" />
                             <div className="element-large-container">
                                 <CalculatorFunctions />
                             </div>
@@ -48,7 +56,7 @@ function App() {
                     />
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
