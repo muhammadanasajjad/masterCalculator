@@ -1,0 +1,20 @@
+.actual-math-input {
+    display: "block";
+    height: 0;
+    border-width: 0;
+    background: transparent;
+    color: transparent;
+    outline: none;
+    overflow: hidden;
+}
+
+.latex-container {
+    border: "1px solid black";
+    font-size: 1.7rem;
+    cursor: "text";
+    text-align: right;
+}
+
+.katex {
+    font-size: 1.7rem;
+}
