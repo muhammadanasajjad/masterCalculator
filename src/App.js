@@ -20,6 +20,7 @@ function App() {
         setPosition({ x, y });
     };
 
+
     return (
         <div className="App" onMouseMove={handleMouseMove}>
             <div class="top-nav-container">

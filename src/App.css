@@ -5,6 +5,11 @@
     --main-fg-dark-mode: #339dff;
     --grey-bg-dark-mode: #26313c;
     --grey-fg-dark-mode: #6a7580;
+
+    --bg-light-mode: #C8D9ED;
+    --fg-light-mode: #2D2222;
+    --main-light-mode: #4663AC;
+    --main-fg-light-mode: #E1F1FD;
 }
 
 html {
@@ -98,4 +103,19 @@ p {
     display: flex;
     justify-content: left;
     flex-direction: column;
+}
+
+.light-buttons {
+    color: var(--main-fg-light-mode);
+    background-color: var(--main-light-mode);
+}
+
+.light-functions {
+    color: var(--main-light-mode);
+    background-color: var(--main-fg-light-mode);
+}
+
+body.light {
+    background-color: var(--bg-light-mode);
+    color: var(--fg-light-mode);
 }
