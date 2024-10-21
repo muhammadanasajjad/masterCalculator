@@ -40,24 +40,24 @@ function App() {
     return (
         <div className="App" onMouseMove={handleMouseMove}>
             <div className="showing" id="popup-active-show">
-                <button id="b1" onClick={replaceCalcText(document.getElementById("b1"))}>
+                <button id="b1" onClick={() => { replaceCalcText("b1") }}>
                     <p>364 + 1</p>
                     <h2>365</h2>
                 </button>
-                <button>
-                    <p>364 + 1</p>
-                    <h2>365</h2>
+                <button id="b2" onClick={() => { replaceCalcText("b2") }}>
+                    <p>Ans</p>
+                    <h2>345908345</h2>
                 </button>
-                <button>
-                    <p>364 + 1</p>
-                    <h2>365</h2>
+                <button id="b3" onClick={() => { replaceCalcText("b3") }}>
+                    <p>Ans</p>
+                    <h2>238723498</h2>
                 </button>
             </div>
             <div className="allElements" id="popup-active-elements">
                 <div class="top-nav-container">
-                    <div className="Hamburger-Menu" onClick={clickMenu}>
+                    <div className="Hamburger-Menu">
                         <div className="menu-button light">
-                            <ion-icon size="large" name="menu-outline"></ion-icon>
+                            <ion-icon size="large" name="menu-outline" onClick={clickMenu}></ion-icon>
                         </div>
                     </div>
                     <div id="Menu-Open" className="whole-screen-menu">
@@ -146,9 +146,10 @@ function App() {
         popupShown.classList.toggle("showing")
     }
 
-    function replaceCalcText(buttonValue) {
-        const calcDisplay = document.getElementById("calc-ans")
-        buttonValue.value = calcDisplay.value
+    function replaceCalcText(buttonID) {
+        const button = document.getElementById(buttonID);
+        const buttonValue = button.lastChild.innerText;
+        setAnswer(buttonValue);
     }
 }
 

@@ -129,7 +129,7 @@ body.light {
     border: none;
     border-radius: 25px;
     height: 3rem;
-    color: #293B56;
+    color: #496999;
     cursor: pointer;
 }
 
@@ -270,6 +270,10 @@ body.light {
     border-radius: 15px;
 }
 
+.showing>button>p {
+    color: white;
+}
+
 .showing>button>h2 {
     margin-right: 25px;
 }
@@ -302,6 +306,10 @@ body.light {
     height: 5rem;
     margin: 10px;
     border-radius: 15px;
+}
+
+.popup-active-shown>button>p {
+    color: white;
 }
 
 .popup-active-shown>button>h2 {
