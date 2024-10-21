@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
     --bg-dark-mode: #17181a;
     --fg-dark-mode: #ffffff;
@@ -38,9 +40,10 @@ p {
 
 .calculator-display {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 2rem;
+    align-items: center;
 }
 
 .calculator-display .answer {
@@ -103,6 +106,7 @@ p {
     display: flex;
     justify-content: left;
     flex-direction: column;
+    align-items: end;
 }
 
 .light-buttons {
@@ -118,4 +122,192 @@ p {
 body.light {
     background-color: var(--bg-light-mode);
     color: var(--fg-light-mode);
+}
+
+.history-button-function {
+    background-color: #1D1B38;
+    border: none;
+    border-radius: 25px;
+    height: 3rem;
+    color: #293B56;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    font-size: 2rem;
+    color: #38509F;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+.menu-value:hover {
+    color: #506ac0;
+}
+
+.menu-value {
+    margin: 5px
+}
+
+.menu-value:nth-child(1) {
+    margin-top: 25px;
+}
+
+.whole-screen-menu {
+    width: 200vh;
+    height: 100vh;
+    background: #020507d0;
+    position: fixed;
+    left: -120rem;
+    top: 0;
+    z-index: 2;
+    margin: 0px;
+    transition: 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.hover-underline-animation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: relative;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transition: transform 0.2s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px;
+}
+
+.active {
+    left: 0rem;
+}
+
+.Hamburger-Menu {
+    width: 150px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu-button {
+    height: 150px;
+    padding: 1rem;
+}
+
+.menu-button-image {
+    cursor: pointer;
+    background-color: none;
+    border-radius: 25px;
+    margin: 10px;
+    margin-top: 15px;
+    flex: 1 0 21%;
+    transition: 0.25s ease-in;
+}
+
+.menu-button-image:hover {
+    background-color: #26313C;
+    color: white;
+}
+
+.menu-image {
+    width: 10rem;
+    height: 10rem;
+}
+
+.menu-graphs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.showing {
+    position: absolute;
+    left: -120rem;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -200px;
+    z-index: 5;
+    width: 20rem;
+    height: 20rem;
+    background-color: #26313C;
+    border-radius: 15px;
+    transition: 0.4s ease-out;
+}
+
+.showing>button {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    background-color: #293B56;
+    color: #005DB2;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 15px;
+    width: 10rem;
+    height: 5rem;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.showing>button>h2 {
+    margin-right: 25px;
+}
+
+.popup-active-shown {
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    top: 50%;
+    margin-top: -200px;
+    z-index: 5;
+    width: 20rem;
+    height: 20rem;
+    background-color: #26313C;
+    border-radius: 15px;
+    transition: 0.25s ease-out;
+}
+
+.popup-active-shown>button {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    background-color: #293B56;
+    color: #005DB2;
+    cursor: pointer;
+    text-align: right;
+    padding-right: 15px;
+    width: 10rem;
+    height: 5rem;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.popup-active-shown>button>h2 {
+    margin-right: 25px;
+}
+
+.popup-active-elements {
+    opacity: 30%;
 }
