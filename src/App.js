@@ -40,6 +40,9 @@ function App() {
     return (
         <div className="App" onMouseMove={handleMouseMove}>
             <div className="showing" id="popup-active-show">
+                <div className="close" id="close" onClick={historyFunction}>
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
                 <button id="b1" onClick={() => { replaceCalcText("b1") }}>
                     <p>364 + 1</p>
                     <h2>365</h2>

@@ -10,6 +10,12 @@
     height: 7rem;
     padding: 25px;
     margin: 20px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.graphicFunctionsSingular:hover {
+    border: 1px solid #26313C;
 }
 
 .graphicImage {

@@ -124,15 +124,6 @@ body.light {
     color: var(--fg-light-mode);
 }
 
-.history-button-function {
-    background-color: #1D1B38;
-    border: none;
-    border-radius: 25px;
-    height: 3rem;
-    color: #496999;
-    cursor: pointer;
-}
-
 .menu-list {
     list-style: none;
     font-size: 2rem;
@@ -240,6 +231,21 @@ body.light {
     flex-wrap: wrap;
 }
 
+.history-button-function {
+    background-color: #1D1B38;
+    border: none;
+    border-radius: 25px;
+    height: 3rem;
+    color: #496999;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.history-button-function:hover {
+    color: white;
+}
+
+
 .showing {
     position: absolute;
     left: -120rem;
@@ -264,7 +270,7 @@ body.light {
     cursor: pointer;
     text-align: right;
     padding-right: 15px;
-    width: 10rem;
+    width: 12rem;
     height: 5rem;
     margin: 10px;
     border-radius: 15px;
@@ -302,10 +308,15 @@ body.light {
     cursor: pointer;
     text-align: right;
     padding-right: 15px;
-    width: 10rem;
+    width: 12rem;
     height: 5rem;
     margin: 10px;
     border-radius: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.popup-active-shown>button:hover {
+    border: 1px solid white;
 }
 
 .popup-active-shown>button>p {
@@ -318,4 +329,25 @@ body.light {
 
 .popup-active-elements {
     opacity: 30%;
+}
+
+.close {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 87%;
+    bottom: 87%;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #5e7b97;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+
+.close:hover {
+    background-color: white;
+    color: #5e7b97;
 }
