@@ -37,8 +37,28 @@ function App() {
         console.log(expression);
     };
 
+    window.addEventListener("load", () => {
+        let count = 0
+        const loader = document.querySelector(".loader");
+        const textLoaded = document.getElementById("loader-text")
+        let loading = setInterval(function () {
+            if (count == 101) {
+                loader.classList.add("loader-hidden")
+                loader.addEventListener("transitionend", () => {
+                    loader.remove()
+                })
+            } else {
+                textLoaded.innerHTML = count
+                count += 1
+            }
+        }, 50)
+    })
+
     return (
         <div className="App" onMouseMove={handleMouseMove}>
+            <div class="loader" id="loader">
+                <p class="loader-text" id="loader-text">0</p>
+            </div>
             <div className="showing" id="popup-active-show">
                 <div className="close" id="close" onClick={historyFunction}>
                     <ion-icon name="close-outline"></ion-icon>
