@@ -7,10 +7,10 @@ import { calculate, getLaTex } from "./utils/calculate";
 import MathInput from "./components/MathInput";
 import { click } from "@testing-library/user-event/dist/click";
 
-import cubicImage from "../src/Images/cubic.png"
-import quadraticImage from "../src/Images/quadratic.png"
-import linearImage from "../src/Images/linear.png"
-import trigImage from "../src/Images/trig.png"
+import cubicImage from "../src/Images/cubic.png";
+import quadraticImage from "../src/Images/quadratic.png";
+import linearImage from "../src/Images/linear.png";
+import trigImage from "../src/Images/trig.png";
 
 function App() {
     const [answer, setAnswer] = useState("0");
@@ -38,40 +38,57 @@ function App() {
     };
 
     window.addEventListener("load", () => {
-        let count = 0
+        let count = 0;
         const loader = document.querySelector(".loader");
-        const textLoaded = document.getElementById("loader-text")
+        const textLoaded = document.getElementById("loader-text");
         let loading = setInterval(function () {
             if (count == 101) {
-                loader.classList.add("loader-hidden")
+                loader.classList.add("loader-hidden");
                 loader.addEventListener("transitionend", () => {
-                    loader.remove()
-                })
+                    loader.remove();
+                });
             } else {
-                textLoaded.innerHTML = count
-                count += 1
+                textLoaded.innerHTML = count;
+                count += 1;
             }
-        }, 50)
-    })
+        }, 50);
+    });
 
     return (
         <div className="App" onMouseMove={handleMouseMove}>
             <div class="loader" id="loader">
-                <p class="loader-text" id="loader-text">0</p>
+                <p class="loader-text" id="loader-text">
+                    0
+                </p>
             </div>
             <div className="showing" id="popup-active-show">
                 <div className="close" id="close" onClick={historyFunction}>
                     <ion-icon name="close-outline"></ion-icon>
                 </div>
-                <button id="b1" onClick={() => { replaceCalcText("b1") }}>
+                <button
+                    id="b1"
+                    onClick={() => {
+                        replaceCalcText("b1");
+                    }}
+                >
                     <p>364 + 1</p>
                     <h2>365</h2>
                 </button>
-                <button id="b2" onClick={() => { replaceCalcText("b2") }}>
+                <button
+                    id="b2"
+                    onClick={() => {
+                        replaceCalcText("b2");
+                    }}
+                >
                     <p>Ans</p>
                     <h2>345908345</h2>
                 </button>
-                <button id="b3" onClick={() => { replaceCalcText("b3") }}>
+                <button
+                    id="b3"
+                    onClick={() => {
+                        replaceCalcText("b3");
+                    }}
+                >
                     <p>Ans</p>
                     <h2>238723498</h2>
                 </button>
@@ -80,35 +97,63 @@ function App() {
                 <div class="top-nav-container">
                     <div className="Hamburger-Menu">
                         <div className="menu-button light">
-                            <ion-icon size="large" name="menu-outline" onClick={clickMenu}></ion-icon>
+                            <ion-icon
+                                size="large"
+                                name="menu-outline"
+                                onClick={clickMenu}
+                            ></ion-icon>
                         </div>
                     </div>
                     <div id="Menu-Open" className="whole-screen-menu">
                         <div className="menu-strings">
                             <li className="menu-list">
-                                <ul className="menu-value hover-underline-animation center">Derivative Calculator</ul>
-                                <ul className="menu-value hover-underline-animation center">Integration Calculator</ul>
-                                <ul className="menu-value hover-underline-animation center">Graphing Calculator</ul>
-                                <ul className="menu-value hover-underline-animation center">Image Upload</ul>
-                                <ul className="menu-value hover-underline-animation center">Saved Equations</ul>
-                                <ul className="menu-value hover-underline-animation center">Need Help ?</ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Derivative Calculator
+                                </ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Integration Calculator
+                                </ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Graphing Calculator
+                                </ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Image Upload
+                                </ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Saved Equations
+                                </ul>
+                                <ul className="menu-value hover-underline-animation center">
+                                    Need Help ?
+                                </ul>
                             </li>
                         </div>
                         <div className="menu-graphs">
                             <button className="menu-button-image">
-                                <img className="menu-image" src={cubicImage}></img>
+                                <img
+                                    className="menu-image"
+                                    src={cubicImage}
+                                ></img>
                                 <p className="hide">Cubic Graphs</p>
                             </button>
                             <button className="menu-button-image">
-                                <img className="menu-image" src={quadraticImage}></img>
+                                <img
+                                    className="menu-image"
+                                    src={quadraticImage}
+                                ></img>
                                 <p className="hide">Quadratic Graphs</p>
                             </button>
                             <button className="menu-button-image">
-                                <img className="menu-image" src={linearImage}></img>
+                                <img
+                                    className="menu-image"
+                                    src={linearImage}
+                                ></img>
                                 <p className="hide">Linear Graphs</p>
                             </button>
                             <button className="menu-button-image">
-                                <img className="menu-image" src={trigImage}></img>
+                                <img
+                                    className="menu-image"
+                                    src={trigImage}
+                                ></img>
                                 <p className="hide">Trig Graphs</p>
                             </button>
                         </div>
@@ -116,12 +161,22 @@ function App() {
                 </div>
                 <div className="large-bottom-container">
                     <div className="calculator-display">
-                        <button className="history-button-function" onClick={historyFunction}>
-                            <ion-icon size="large" name="clipboard-outline"></ion-icon>
+                        <button
+                            className="history-button-function"
+                            onClick={historyFunction}
+                        >
+                            <ion-icon
+                                size="large"
+                                name="clipboard-outline"
+                            ></ion-icon>
                         </button>
                         <div>
-                            <MathInput onExpressionChange={handleExpressionChange} />
-                            <div className="answer" id="calc-ans">{answer}</div>
+                            <MathInput
+                                onExpressionChange={handleExpressionChange}
+                            />
+                            <div className="answer" id="calc-ans">
+                                {answer}
+                            </div>
                         </div>
                     </div>
                     <div class="blur-container" ref={containerRef}>
@@ -150,23 +205,21 @@ function App() {
                         />
                     </div>
                 </div>
-            </div >
+            </div>
         </div>
-
-
     );
     function clickMenu() {
-        const menu = document.getElementById("Menu-Open")
-        menu.classList.toggle("active")
+        const menu = document.getElementById("Menu-Open");
+        menu.classList.toggle("active");
     }
 
     function historyFunction() {
-        const entireWeb = document.getElementById("popup-active-elements")
-        const popupShown = document.getElementById("popup-active-show")
+        const entireWeb = document.getElementById("popup-active-elements");
+        const popupShown = document.getElementById("popup-active-show");
 
-        entireWeb.classList.toggle("popup-active-elements")
-        popupShown.classList.toggle("popup-active-shown")
-        popupShown.classList.toggle("showing")
+        entireWeb.classList.toggle("popup-active-elements");
+        popupShown.classList.toggle("popup-active-shown");
+        popupShown.classList.toggle("showing");
     }
 
     function replaceCalcText(buttonID) {

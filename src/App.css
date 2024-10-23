@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
     --bg-dark-mode: #17181a;
@@ -8,10 +8,10 @@
     --grey-bg-dark-mode: #26313c;
     --grey-fg-dark-mode: #6a7580;
 
-    --bg-light-mode: #C8D9ED;
-    --fg-light-mode: #2D2222;
-    --main-light-mode: #4663AC;
-    --main-fg-light-mode: #E1F1FD;
+    --bg-light-mode: #c8d9ed;
+    --fg-light-mode: #2d2222;
+    --main-light-mode: #4663ac;
+    --main-fg-light-mode: #e1f1fd;
 }
 
 html {
@@ -49,6 +49,7 @@ p {
 .calculator-display .answer {
     font-size: 4rem;
     font-weight: 600;
+    text-align: right;
 }
 
 .calculator-display .operation {
@@ -127,7 +128,7 @@ body.light {
 .menu-list {
     list-style: none;
     font-size: 2rem;
-    color: #38509F;
+    color: #38509f;
     font-family: "Inter", sans-serif;
     font-weight: 600;
 }
@@ -137,7 +138,7 @@ body.light {
 }
 
 .menu-value {
-    margin: 5px
+    margin: 5px;
 }
 
 .menu-value:nth-child(1) {
@@ -168,7 +169,7 @@ body.light {
 }
 
 .hover-underline-animation::after {
-    content: '';
+    content: "";
     position: relative;
     width: 100%;
     transform: scaleX(0);
@@ -201,7 +202,7 @@ body.light {
 }
 
 .menu-button {
-    height: 150px;
+    /* height: 150px; */
     padding: 1rem;
 }
 
@@ -216,7 +217,7 @@ body.light {
 }
 
 .menu-button-image:hover {
-    background-color: #26313C;
+    background-color: #26313c;
     color: white;
 }
 
@@ -232,7 +233,7 @@ body.light {
 }
 
 .history-button-function {
-    background-color: #1D1B38;
+    background-color: #1d1b38;
     border: none;
     border-radius: 25px;
     height: 3rem;
@@ -245,7 +246,6 @@ body.light {
     color: white;
 }
 
-
 .showing {
     position: absolute;
     left: -120rem;
@@ -255,18 +255,18 @@ body.light {
     z-index: 5;
     width: 20rem;
     height: 20rem;
-    background-color: #26313C;
+    background-color: #26313c;
     border-radius: 15px;
     transition: 0.4s ease-out;
 }
 
-.showing>button {
+.showing > button {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     text-decoration: none;
     border: none;
-    background-color: #293B56;
-    color: #005DB2;
+    background-color: #293b56;
+    color: #005db2;
     cursor: pointer;
     text-align: right;
     padding-right: 15px;
@@ -276,11 +276,11 @@ body.light {
     border-radius: 15px;
 }
 
-.showing>button>p {
+.showing > button > p {
     color: white;
 }
 
-.showing>button>h2 {
+.showing > button > h2 {
     margin-right: 25px;
 }
 
@@ -293,18 +293,18 @@ body.light {
     z-index: 5;
     width: 20rem;
     height: 20rem;
-    background-color: #26313C;
+    background-color: #26313c;
     border-radius: 15px;
     transition: 0.25s ease-out;
 }
 
-.popup-active-shown>button {
+.popup-active-shown > button {
     font-family: "Inter", sans-serif;
     font-weight: 600;
     text-decoration: none;
     border: none;
-    background-color: #293B56;
-    color: #005DB2;
+    background-color: #293b56;
+    color: #005db2;
     cursor: pointer;
     text-align: right;
     padding-right: 15px;
@@ -315,15 +315,15 @@ body.light {
     transition: 0.5s ease-in-out;
 }
 
-.popup-active-shown>button:hover {
+.popup-active-shown > button:hover {
     border: 1px solid white;
 }
 
-.popup-active-shown>button>p {
+.popup-active-shown > button > p {
     color: white;
 }
 
-.popup-active-shown>button>h2 {
+.popup-active-shown > button > h2 {
     margin-right: 25px;
 }
 
@@ -356,7 +356,7 @@ body.light {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background-color: #26313C;
+    background-color: #26313c;
     z-index: 5;
     display: flex;
     justify-content: center;

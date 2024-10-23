@@ -15,6 +15,14 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
     const [mathInput, setMathInput] = useState(""); // Store the user's input
     const inputRef = useRef(null); // Reference to the hidden input
 
+    // Handle focusing the hidden input when clicking or typing on the MathJax area
+    const handleFocusMathJaxArea = () => {
+        if (inputRef.current) {
+            console.log("focus");
+            inputRef.current.focus();
+        }
+    };
+
     useEffect(() => {
         onExpressionChange(mathInput);
         document.addEventListener("keyPressed", handleFocusMathJaxArea);
@@ -29,13 +37,6 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
         setMathInput(event.target.value);
     };
 
-    // Handle focusing the hidden input when clicking or typing on the MathJax area
-    const handleFocusMathJaxArea = () => {
-        if (inputRef.current) {
-            inputRef.current.focus();
-        }
-    };
-
     // Automatically focus the input when the component mounts
     useEffect(() => {
         if (inputRef.current) {
@@ -44,7 +45,7 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
     }, [inputRef.current]);
 
     return (
-        <div>
+        <div onKeyDown={(e) => handleFocusMathJaxArea()}>
             {/* Hidden input for capturing user input */}
             <input
                 ref={inputRef}
@@ -58,7 +59,10 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
             {/* MathJax Area that visually replaces the input */}
             <div
                 className="latex-container"
-                onClick={handleFocusMathJaxArea} // Clicking focuses the hidden input
+                onClick={() => {
+                    console.log("press");
+                    handleFocusMathJaxArea();
+                }} // Clicking focuses the hidden input
             >
                 {mathInput.length > 0 ? (
                     <>
@@ -66,7 +70,15 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
                             {getLaTex(mathInput)[1] == false &&
                                 "Invalid expression"}
                         </p>
-                        <TeX className="latex">{getLaTex(mathInput)[0]}</TeX>
+                        <TeX
+                            onClick={() => {
+                                console.log("press");
+                                handleFocusMathJaxArea();
+                            }}
+                            className="latex"
+                        >
+                            {getLaTex(mathInput)[0]}
+                        </TeX>
                     </>
                 ) : (
                     <>
