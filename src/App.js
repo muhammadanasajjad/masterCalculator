@@ -38,18 +38,20 @@ function App() {
     };
 
     window.addEventListener("load", () => {
+        let count = 0
         const loader = document.querySelector(".loader");
         const textLoaded = document.getElementById("loader-text")
-        let count = 0
-
-        while (count != 70) {
-            textLoaded.innerHTML = count
-            count += 1
-        }
-        loader.classList.add("loader-hidden")
-        loader.addEventListener("transitionend", () => {
-            loader.remove()
-        })
+        let loading = setInterval(function () {
+            if (count == 101) {
+                loader.classList.add("loader-hidden")
+                loader.addEventListener("transitionend", () => {
+                    loader.remove()
+                })
+            } else {
+                textLoaded.innerHTML = count
+                count += 1
+            }
+        }, 50)
     })
 
     return (
