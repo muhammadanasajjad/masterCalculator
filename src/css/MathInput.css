@@ -13,6 +13,8 @@
     font-size: 1.7rem;
     cursor: "text";
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
     /* background-color: red; */
 }
 

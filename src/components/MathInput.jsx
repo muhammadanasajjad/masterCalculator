@@ -68,7 +68,7 @@ const MathInput = ({ onExpressionChange = () => {} }) => {
                     <>
                         <p>
                             {getLaTex(mathInput)[1] == false &&
-                                "Invalid expression"}
+                                "Invalid expression:  "}
                         </p>
                         <TeX
                             onClick={() => {
