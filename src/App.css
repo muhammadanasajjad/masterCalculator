@@ -70,6 +70,7 @@ p {
     padding-right: 0px;
     display: flex;
     justify-content: space-evenly;
+    backdrop-filter: blur(15px);
 }
 
 .blur-light {

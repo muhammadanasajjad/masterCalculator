@@ -4,6 +4,7 @@ import cubicImage from "../src/Images/cubic.png";
 import quadraticImage from "../src/Images/quadratic.png";
 import linearImage from "../src/Images/linear.png";
 import trigImage from "../src/Images/trig.png";
+
 const Menu = ({ clickMenu = () => {} }) => {
     return (
         <div>
@@ -26,7 +27,12 @@ const Menu = ({ clickMenu = () => {} }) => {
                             <ul className="menu-value hover-underline-animation center">
                                 Integration Calculator
                             </ul>
-                            <ul className="menu-value hover-underline-animation center">
+                            <ul
+                                onClick={() =>
+                                    window.open("/graphing-calculator", "_self")
+                                }
+                                className="menu-value hover-underline-animation center"
+                            >
                                 Graphing Calculator
                             </ul>
                             <ul className="menu-value hover-underline-animation center">

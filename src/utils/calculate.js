@@ -42,11 +42,15 @@ export function getLaTex(expression) {
     return [expression, valid];
 }
 
-export function calculate(expression) {
+export function calculate(expression, scope = {}) {
     try {
         expression = closeBrackets(expression);
         expression = parse(expression);
-        let evaluatedExpression = expression.compile().evaluate(defaultScope); // the evaluated expression eg. 53153.256484618684
+        for (let i = 0; i < Object.keys(defaultScope).length; i++) {
+            let key = Object.keys(defaultScope)[i];
+            if (!scope[key]) scope[key] = defaultScope[key];
+        }
+        let evaluatedExpression = expression.compile().evaluate(scope); // the evaluated expression eg. 53153.256484618684
         return simplifyNumber(evaluatedExpression);
     } catch {
         return;
