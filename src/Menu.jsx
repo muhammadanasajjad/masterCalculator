@@ -4,10 +4,15 @@ import cubicImage from "../src/Images/cubic.png";
 import quadraticImage from "../src/Images/quadratic.png";
 import linearImage from "../src/Images/linear.png";
 import trigImage from "../src/Images/trig.png";
-const Menu = ({ clickMenu = () => {} }) => {
+const Menu = ({ clickMenu = () => { }, toggleMode = () => { } }) => {
     return (
         <div>
             <div class="top-nav-container">
+
+                <div className="mode-toggler" id="mode-toggler" onClick={toggleMode}>
+                    <div className="toggler-circle" id="toggler-circle"></div>
+                </div>
+
                 <div className="Hamburger-Menu">
                     <div className="menu-button light">
                         <ion-icon
@@ -41,22 +46,22 @@ const Menu = ({ clickMenu = () => {} }) => {
                         </li>
                     </div>
                     <div className="menu-graphs">
-                        <button className="menu-button-image">
+                        <button className="menu-button-image-1 button-image">
                             <img className="menu-image" src={cubicImage}></img>
                             <p className="hide">Cubic Graphs</p>
                         </button>
-                        <button className="menu-button-image">
+                        <button className="menu-button-image-2 button-image">
                             <img
                                 className="menu-image"
                                 src={quadraticImage}
                             ></img>
                             <p className="hide">Quadratic Graphs</p>
                         </button>
-                        <button className="menu-button-image">
+                        <button className="menu-button-image-3 button-image">
                             <img className="menu-image" src={linearImage}></img>
                             <p className="hide">Linear Graphs</p>
                         </button>
-                        <button className="menu-button-image">
+                        <button className="menu-button-image-4 button-image">
                             <img className="menu-image" src={trigImage}></img>
                             <p className="hide">Trig Graphs</p>
                         </button>

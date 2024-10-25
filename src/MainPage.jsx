@@ -47,15 +47,13 @@ function MainPage() {
                 textLoaded.innerHTML = count;
                 count += 1;
             }
-        }, 50);
+        }, 10);
     });
 
     return (
         <div className="App" onMouseMove={handleMouseMove}>
             <div class="loader" id="loader">
-                <p class="loader-text" id="loader-text">
-                    0
-                </p>
+                <p class="loader-text" id="loader-text"></p>
             </div>
             <div className="showing" id="popup-active-show">
                 <div className="close" id="close" onClick={historyFunction}>
@@ -90,18 +88,18 @@ function MainPage() {
                 </button>
             </div>
             <div className="allElements" id="popup-active-elements">
-                <Menu clickMenu={clickMenu} />
+                <Menu clickMenu={clickMenu} toggleMode={toggleMode} />
                 <div className="large-bottom-container">
+                    <button
+                        className="history-button-function"
+                        onClick={historyFunction}
+                    >
+                        <ion-icon
+                            size="large"
+                            name="clipboard-outline"
+                        ></ion-icon>
+                    </button>
                     <div className="calculator-display">
-                        <button
-                            className="history-button-function"
-                            onClick={historyFunction}
-                        >
-                            <ion-icon
-                                size="large"
-                                name="clipboard-outline"
-                            ></ion-icon>
-                        </button>
                         <div>
                             <MathInput
                                 onExpressionChange={handleExpressionChange}
@@ -143,6 +141,15 @@ function MainPage() {
     function clickMenu() {
         const menu = document.getElementById("Menu-Open");
         menu.classList.toggle("active");
+    }
+
+    function toggleMode() {
+        const toggler = document.getElementById("mode-toggler");
+        const togglerCircle = document.getElementById("toggler-circle");
+
+        toggler.classList.toggle("mode-toggler-light");
+        togglerCircle.classList.toggle("toggler-circle-light");
+        document.body.classList.toggle("light-mode")
     }
 
     function historyFunction() {

@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #26313C;
+    background-color: var(--button-background);
+    color: var(--button-text);
     border-radius: 15px;
     width: 28rem;
     height: 7rem;
